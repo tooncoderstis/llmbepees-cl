@@ -37,5 +37,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: gitleaks
-        uses: gitleaks/gitleaks-action@v2
+      # Pakai gitleaks CLI (bukan action) agar tidak gagal pada push pertama:
+      # action menghitung rentang "<commit-pertama>^..HEAD" yang tidak ada untuk root commit.
+      - name: Install gitleaks
+        run: |
+          curl -sSL -o gitleaks.tar.gz \
+            https://github.com/gitleaks/gitleaks/releases/download/v8.24.3/gitleaks_8.24.3_linux_x64.tar.gz
+          tar -xzf gitleaks.tar.gz gitleaks
+
+      - name: Scan riwayat git untuk rahasia
+        run: ./gitleaks git --redact -v --exit-code=2
