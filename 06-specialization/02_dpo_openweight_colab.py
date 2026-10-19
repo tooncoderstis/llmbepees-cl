@@ -7,17 +7,32 @@ bawah adalah contoh publik yang ditulis sendiri — jangan pakai data internal.
 Di Colab (Runtime -> T4 GPU):
     !pip install -q "transformers>=4.45" "peft>=0.12" "trl>=0.11" "datasets>=2.20" \
         "bitsandbytes>=0.43" accelerate
+    !pip uninstall -y -q torchao  # Colab sering memasang torchao lama yang bentrok dengan peft
     !python 02_dpo_openweight_colab.py
 
-Lihat `COLAB.md` untuk langkah lengkap.
+Catatan GPU: dtype dipilih otomatis (bf16 di Ampere+, fp16 di T4, fp32 di CPU).
+Di T4 AMP dimatikan karena GradScaler tidak mendukung bf16. Lihat `COLAB.md`.
 """
 
 from __future__ import annotations
+
+import torch
 
 # --- Konfigurasi --------------------------------------------------------------
 MODEL_ID = "Qwen/Qwen2.5-0.5B-Instruct"
 OUTPUT_DIR = "./dpo-bps-behavior"
 BETA = 0.1
+
+
+def pick_dtype() -> torch.dtype:
+    """bf16 di GPU Ampere+ (compute capability >= 8), fp16 di GPU lama (T4), fp32 di CPU.
+
+    `torch.cuda.is_bf16_supported()` bisa keliru True di T4, jadi cek capability langsung.
+    """
+    if not torch.cuda.is_available():
+        return torch.float32
+    return torch.bfloat16 if torch.cuda.get_device_capability()[0] >= 8 else torch.float16
+
 
 SYSTEM = (
     "Anda asisten statistik BPS. Jawab konsep/definisi dari dokumen yang diberikan "
@@ -54,11 +69,13 @@ PREFERENCE_DATA = [
 
 
 def main() -> None:
-    import torch
     from datasets import Dataset
     from peft import LoraConfig
     from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
     from trl import DPOConfig, DPOTrainer
+
+    dtype = pick_dtype()
+    print("dtype latih:", dtype)
 
     tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
     if tokenizer.pad_token is None:
@@ -67,10 +84,10 @@ def main() -> None:
     bnb = BitsAndBytesConfig(
         load_in_4bit=True,
         bnb_4bit_quant_type="nf4",
-        bnb_4bit_compute_dtype=torch.bfloat16,
+        bnb_4bit_compute_dtype=dtype,
     )
     model = AutoModelForCausalLM.from_pretrained(
-        MODEL_ID, quantization_config=bnb, device_map="auto", torch_dtype=torch.bfloat16
+        MODEL_ID, quantization_config=bnb, device_map="auto", torch_dtype=dtype
     )
 
     lora = LoraConfig(
@@ -93,8 +110,16 @@ def main() -> None:
         logging_steps=1,
         max_length=512,
         save_strategy="no",
+        bf16=dtype is torch.bfloat16,
+        fp16=False,
     )
-    trainer = DPOTrainer(model=model, args=args, train_dataset=dataset, peft_config=lora)
+    trainer = DPOTrainer(
+        model=model,
+        args=args,
+        train_dataset=dataset,
+        peft_config=lora,
+        processing_class=tokenizer,
+    )
     trainer.train()
     trainer.save_model(OUTPUT_DIR)
     tokenizer.save_pretrained(OUTPUT_DIR)

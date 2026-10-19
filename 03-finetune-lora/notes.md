@@ -4,9 +4,9 @@ Format tiap entri: **apa yang dicoba · hasil · apa yang dipelajari**.
 
 ## Ringkasan
 - [x] Pelajari konsep LoRA/QLoRA dan kenapa hemat memori
-- [ ] Jalankan di Google Colab/Kaggle (menunggu sesi GPU) — skrip & panduan siap
-- [ ] Fine-tune model open-weight untuk satu tugas sempit (format jawaban ber-sitasi)
-- [x] Bandingkan sebelum/sesudah dengan evaluasi sederhana (versi CPU; versi GPU menunggu)
+- [x] Jalankan di Google Colab (T4 GPU) — `finetune_openweight_colab.py` + `eval_format_colab.py`
+- [x] Fine-tune model open-weight untuk satu tugas sempit (format jawaban ber-sitasi)
+- [x] Bandingkan sebelum/sesudah dengan evaluasi sederhana (CPU & GPU)
 
 ## Cara menjalankan
 ```sh
@@ -36,9 +36,29 @@ Kode reusable LoRA ada di `src/llmbepees_cl/lora/` (diuji di `tests/test_lora.py
   Catatan jujur: teks hasil generasi masih kacau karena model karakter ini sangat kecil — angka loss
   adalah bukti utamanya; kualitas bahasa sebenarnya diuji di skrip Colab.
 
-- **Colab (belum dijalankan)** — `finetune_openweight_colab.py` (Qwen2.5-0.5B-Instruct, `peft`+`trl`)
-  dan `eval_format_colab.py` (bandingkan sitasi & perilaku "tidak ditemukan" sebelum/sesudah).
-  Dijalankan pengguna di GPU; hasil akan dicatat di sini.
+- **Colab T4 · LoRA open-weight (2026-10-20)** — `finetune_openweight_colab.py` pada
+  `Qwen/Qwen2.5-0.5B-Instruct`, Google Colab **Tesla T4** (15 GB). Hasil:
+  - `trainable params: 2,162,688 / 496,195,456` = **0.4359%** (r=16 pada q/k/v/o_proj).
+  - 10 langkah optimizer (4 contoh, batch 2, akumulasi 4, 10 epoch), **loss 3.913 → 2.705**.
+  - Adaptor tersimpan (`adapter_model.safetensors`, 192 tensor); `lora_A` absmean ≈1.7e-2,
+    `lora_B` absmean ≈4.1e-4 (nonzero tapi kecil — baru bergerak sedikit).
+  - `eval_format_colab.py`: **skor format dasar 0/3 | LoRA 0/3**; jawaban dasar & LoRA
+    **identik** (belum menyertakan sitasi, belum menolak "tidak ditemukan").
+  Pelajaran: dengan hanya **4 contoh** dan **10 langkah**, LoRA belum mengubah perilaku
+  terukur — `B` awal nol dan baru bergerak ~1e-4, jadi output ≈ model dasar. Untuk
+  melatih perilaku (sitasi/abstain) perlu **lebih banyak & beragam contoh** dan **lebih
+  banyak langkah**. Adaptor disalin ke Drive: `MyDrive/llm-bps/lora-bps-format`.
+
+- **Temuan kompatibilitas Colab (penting)** — agar skrip jalan di Colab terbaru:
+  1. `peft` terbaru menuntut `torchao>=0.16`, Colab punya 0.10 → error saat `get_peft_model`.
+     Solusi: `!pip uninstall -y -q torchao` (torchao tak dipakai).
+  2. TRL baru mengganti `SFTConfig(max_seq_length=...)` → `max_length`.
+  3. T4 (compute capability 7.5) **tak mendukung bf16 matmul** → gunakan `torch.float16`.
+     Awas: `torch.cuda.is_bf16_supported()` bisa **keliru True di T4**; cek
+     `torch.cuda.get_device_capability()[0] >= 8` (Ampere+) — itulah yang dipakai `pick_dtype()`.
+  Perbaikan **permanen** sudah masuk ke repo (`pick_dtype`, `max_length`, `processing_class`,
+  AMP off di T4, + `!pip uninstall -y torchao` di docstring/`COLAB.md`), dan **terverifikasi
+  di T4 tanpa patch in-memory**.
 
 ## Latihan yang disarankan
 1. `01`: naikkan `r` ke 4 lalu turunkan ke 1 — di titik mana kapasitas adaptasi jadi penghambat?

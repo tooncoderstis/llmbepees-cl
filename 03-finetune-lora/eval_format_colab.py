@@ -13,7 +13,7 @@ from __future__ import annotations
 
 import re
 
-from finetune_openweight_colab import MODEL_ID, SYSTEM
+from finetune_openweight_colab import MODEL_ID, SYSTEM, pick_dtype
 
 ADAPTER_DIR = "./lora-bps-format"
 
@@ -50,13 +50,12 @@ def skor(jawaban: str, tes: dict) -> bool:
 
 
 def main() -> None:
-    import torch
     from peft import PeftModel
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
     tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
     base = AutoModelForCausalLM.from_pretrained(
-        MODEL_ID, torch_dtype=torch.bfloat16, device_map="auto"
+        MODEL_ID, torch_dtype=pick_dtype(), device_map="auto"
     )
     tuned = PeftModel.from_pretrained(base, ADAPTER_DIR)
 

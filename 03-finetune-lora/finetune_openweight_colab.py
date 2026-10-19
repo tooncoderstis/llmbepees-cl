@@ -7,17 +7,34 @@ jangan pernah mengirim data internal ke API/layanan mana pun.
 
 Di Colab:
     !pip install -q "transformers>=4.45" "peft>=0.12" "trl>=0.11" "datasets>=2.20" accelerate
+    !pip uninstall -y -q torchao  # Colab sering memasang torchao lama yang bentrok dengan peft
     !python finetune_openweight_colab.py
 
-Detail langkah ada di `COLAB.md` di folder yang sama.
+Catatan GPU: dtype dipilih otomatis — bf16 di GPU baru (Ampere+), fp16 di GPU lama
+(mis. T4 yang tak mendukung bf16), fp32 di CPU. Lihat `COLAB.md` di folder yang sama.
 """
 
 from __future__ import annotations
+
+import torch
 
 # --- Konfigurasi --------------------------------------------------------------
 MODEL_ID = "Qwen/Qwen2.5-0.5B-Instruct"
 OUTPUT_DIR = "./lora-bps-format"
 MAX_SEQ_LEN = 512
+
+
+def pick_dtype() -> torch.dtype:
+    """bf16 di GPU Ampere+ (compute capability >= 8), fp16 di GPU lama (T4), fp32 di CPU.
+
+    T4 (compute capability 7.5) tidak mendukung matmul bf16. Kami cek compute
+    capability langsung karena `torch.cuda.is_bf16_supported()` bisa keliru
+    mengembalikan True pada T4.
+    """
+    if not torch.cuda.is_available():
+        return torch.float32
+    return torch.bfloat16 if torch.cuda.get_device_capability()[0] >= 8 else torch.float16
+
 
 SYSTEM = (
     "Anda asisten statistik BPS. Jawab konsep dan definisi hanya berdasarkan dokumen "
@@ -64,14 +81,16 @@ def build_texts(tokenizer) -> list[dict[str, str]]:
 
 
 def main() -> None:
-    import torch
     from datasets import Dataset
     from peft import LoraConfig, get_peft_model
     from transformers import AutoModelForCausalLM, AutoTokenizer
     from trl import SFTConfig, SFTTrainer
 
+    dtype = pick_dtype()
+    print("dtype latih:", dtype)
+
     tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
-    model = AutoModelForCausalLM.from_pretrained(MODEL_ID, torch_dtype=torch.bfloat16)
+    model = AutoModelForCausalLM.from_pretrained(MODEL_ID, torch_dtype=dtype)
 
     lora_config = LoraConfig(
         r=16,
@@ -92,8 +111,10 @@ def main() -> None:
         gradient_accumulation_steps=4,
         learning_rate=2e-4,
         logging_steps=1,
-        max_seq_length=MAX_SEQ_LEN,
+        max_length=MAX_SEQ_LEN,
         save_strategy="no",
+        bf16=dtype is torch.bfloat16,
+        fp16=dtype is torch.float16,
     )
     trainer = SFTTrainer(model=model, args=args, train_dataset=dataset)
     trainer.train()

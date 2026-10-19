@@ -8,6 +8,7 @@ Preference tuning tidak dijalankan di laptop ini (lihat `AGENTS.md`).
 3. Pasang dependensi:
    ```bash
    !pip install -q "transformers>=4.45" "peft>=0.12" "trl>=0.11" "datasets>=2.20" "bitsandbytes>=0.43" accelerate
+   !pip uninstall -y -q torchao  # Colab sering memuat torchao lama -> peft menolak; torchao tak dipakai
    ```
 4. Jalankan:
    ```bash
@@ -26,6 +27,9 @@ Preference tuning tidak dijalankan di laptop ini (lihat `AGENTS.md`).
 - **QLoRA 4-bit** (`bitsandbytes`) + LoRA (`peft`) → hanya sebagian kecil parameter dilatih,
   hemat VRAM. `β=0.1`.
 - Reference implisit dari base model dengan adaptor LoRA dinonaktifkan (fitur PEFT di TRL).
+- Dtype otomatis (`pick_dtype`): bf16 di GPU Ampere+, **fp16 di T4**. Di T4, AMP dimatikan
+  (`bf16=False, fp16=False`) karena `GradScaler` gagal pada bf16.
+- TRL terbaru butuh `processing_class=tokenizer` pada `DPOTrainer`.
 
 ## Aturan data
 - Hanya teks publik; contoh di skrip ditulis sendiri. Jangan pakai data internal.

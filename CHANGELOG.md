@@ -14,6 +14,20 @@ Status terkini: [`STATUS.md`](STATUS.md).
 - Fase 5 (Mekanika training, scaling, serving): paket `src/llmbepees_cl/training/` (jadwal LR warmup+cosine, akumulasi gradien + clipping + autocast bf16, fit hukum pangkat) dan `src/llmbepees_cl/serving/` (API FastAPI: `/health`, `/ask`, `/indicators`; benchmark latensi p50/p95) + tes pytest.
 - Skrip belajar `05-serving/` (01 mekanika training, 02 scaling law sintetis, 03 serve, 04 benchmark) + `PANDUAN.md` dan `notes.md`; ekstra `serve` ditambah `httpx`.
 ### Changed
+- Skrip Colab disamakan dengan API/lingkungan Colab terbaru sehingga **jalan tanpa patch**:
+  `pick_dtype()` memilih dtype dari compute capability (≥8 Ampere+ → bf16, T4 → **fp16**, CPU → fp32),
+  `SFTConfig(max_length=...)` (bukan `max_seq_length`), `DPOTrainer(processing_class=tokenizer)`,
+  AMP dimatikan di T4, plus catatan `!pip uninstall -y torchao` di docstring & `COLAB.md`.
+  Terverifikasi berjalan di Colab T4 (`finetune`+`eval` Fase 3; DPO Fase 6).
+- Fase 6 dijalankan di **Google Colab (Tesla T4)**: `02_dpo_openweight_colab.py` — QLoRA 4-bit +
+  LoRA (r=16, β=0.1) pada `Qwen2.5-0.5B-Instruct` → loss **ln 2 (0.6931) → 0.3655** (5 langkah).
+  Adaptor disimpan di Drive; temuan kompatibilitas (uninstall `torchao`, `processing_class`,
+  T4 tanpa bf16 → fp16 & AMP off) dicatat di `06-specialization/notes.md`.
+- Fase 3 dijalankan di **Google Colab (Tesla T4)**: `Qwen2.5-0.5B-Instruct` + LoRA (r=16, q/k/v/o)
+  → 2.162.688/496.195.456 parameter dilatih (**0.436%**), loss 3.913 → 2.705 (10 langkah).
+  Eval format: dasar 0/3, LoRA 0/3 (jawaban identik — belum terlatih cukup). Hasil & temuan
+  kompatibilitas (torchao, `SFTConfig.max_length`, T4 tanpa bf16 → fp16) dicatat di
+  `03-finetune-lora/notes.md`; adaptor disimpan di Drive.
 - `04-rag-bps/eval/run_eval.py` memakai paket `evaluation` (DRY); `README.md` diperluas (peta fase, contoh, hasil ringkas); `dev` extra menambah `fastapi`+`httpx`.
 - CI: `secret-scan` memakai gitleaks CLI (scan riwayat penuh) alih-alih action (gagal pada push pertama).
 - `requirements.txt`: `torch` diaktifkan (CPU); catatan pemasangan via index CPU.

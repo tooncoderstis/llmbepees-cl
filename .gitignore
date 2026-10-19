@@ -47,6 +47,9 @@ adapter_*
 *.log
 tmp/
 
+# Artefak MCP / browser (Playwright)
+.playwright-mcp/
+
 # OS/editor
 .DS_Store
 Thumbs.db

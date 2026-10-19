@@ -4,12 +4,12 @@
 > Riwayat rilis: [`CHANGELOG.md`](CHANGELOG.md) · Keputusan: [`docs/adr/`](docs/adr/) · Kebutuhan: [`PRD.md`](PRD.md).
 > **Jangan simpan kredensial di file ini.**
 
-- **Terakhir diperbarui**: 2026-10-19
+- **Terakhir diperbarui**: 2026-10-20
 - **Versi produksi aktif**: belum ada (sekali deploy baru di Fase 5)
 - **Platform**: Python 3.11 (NumPy → PyTorch CPU); ruff + pytest; hub portofolio via Node
 
 ## TL;DR (konteks 30 detik)
-`llmbepees-cl` adalah **jurnal belajar 12 minggu** (`ROADMAP.md`) yang sekaligus membangun **prototipe asisten BPS faktual & ber-sitasi** (konsep/definisi via RAG, angka hanya via tool). Ini **proyek baru terpisah** dari `llmbepees` (ADR-0003). Stack Python 3.11, PyTorch CPU, pip+venv+ruff+pytest. **Fase 0–2 selesai** — scaffold, dasar PyTorch (`01-pytorch-basics/`), dan transformer mini dari nol (`02-mini-gpt/`) dengan paket ber-tes `basics/` + `minigpt/`. **Fase 4 (RAG + tool calling) selesai** — paket `rag/` + skrip `04-rag-bps/` & evaluasi (baseline 100%, in-domain). **Fase 5 (mekanika training, scaling, serving) selesai** — paket `training/` & `serving/` (API FastAPI + benchmark latensi) + skrip `05-serving/`. **Fase 6 (post-training & evaluasi) selesai** — paket `posttraining/` (DPO from-scratch) & `evaluation/` (harness + analisis kegagalan) + skrip `06-specialization/` (DPO CPU, benchmark **200 pertanyaan** 100%, ringkasan paper) + ADR-0004. **Fase 3 (LoRA) dikerjakan** — paket `lora/` + skrip CPU `03-finetune-lora/` ber-tes; skrip Colab/GPU siap namun **belum dijalankan**. Repo publik `tooncoderstis/llmbepees-cl`, CI hijau. Berikutnya: jalankan Colab (Fase 3 & DPO) di GPU; susun test set ahli.
+`llmbepees-cl` adalah **jurnal belajar 12 minggu** (`ROADMAP.md`) yang sekaligus membangun **prototipe asisten BPS faktual & ber-sitasi** (konsep/definisi via RAG, angka hanya via tool). Ini **proyek baru terpisah** dari `llmbepees` (ADR-0003). Stack Python 3.11, PyTorch CPU, pip+venv+ruff+pytest. **Fase 0–2 selesai** — scaffold, dasar PyTorch (`01-pytorch-basics/`), dan transformer mini dari nol (`02-mini-gpt/`) dengan paket ber-tes `basics/` + `minigpt/`. **Fase 4 (RAG + tool calling) selesai** — paket `rag/` + skrip `04-rag-bps/` & evaluasi (baseline 100%, in-domain). **Fase 5 (mekanika training, scaling, serving) selesai** — paket `training/` & `serving/` (API FastAPI + benchmark latensi) + skrip `05-serving/`. **Fase 6 (post-training & evaluasi) selesai** — paket `posttraining/` (DPO from-scratch) & `evaluation/` (harness + analisis kegagalan) + skrip `06-specialization/` (DPO CPU, benchmark **200 pertanyaan** 100%, ringkasan paper) + ADR-0004. **Fase 3 (LoRA) dikerjakan** — paket `lora/` + skrip CPU `03-finetune-lora/` ber-tes; **Colab T4 sudah dijalankan** (Qwen2.5-0.5B-Instruct, 0,436% parameter, loss 3.91→2.71) namun eval format masih 0/3 — perlu lebih banyak data/langkah. Repo publik `tooncoderstis/llmbepees-cl`, CI hijau. Berikutnya: susun test set ahli (ADR-0004); tambah data/langkah Fase 3/6 agar perilaku berubah.
 
 ## Checklist Tahap
 | Fase | Judul | Status |
@@ -35,10 +35,10 @@
 - Fase 1 selesai: `torch 2.14.1+cpu` + `torchvision 0.29.1+cpu` terpasang di `.venv` (CUDA off, 4 thread); CI juga memasang torch CPU.
 - Skrip belajar di `01-pytorch-basics/` (01–06) + paket reusable `src/llmbepees_cl/basics/` ber-tes. MNIST subset → akurasi uji 0.889.
 - Fase 2 selesai: `02-mini-gpt/` (01 tokenizer → 05 generate) + paket `src/llmbepees_cl/minigpt/` ber-tes. Model `n_embd=64, n_head=4, n_layer=2, block_size=64` (109k parameter) pada `TINY_CORPUS`: loss latih 3.77 → 0.18 (validasi 4.45 — overfit data kecil); generasi menghasilkan teks statistik yang masuk akal.
-- Fase 3 (berjalan): paket `src/llmbepees_cl/lora/` + skrip `03-finetune-lora/` (01 LoRA from-scratch, 02 LoRA pada MiniGPT, + skrip Colab). CPU: LoRA ~3.6% parameter dilatih, loss contoh tahanan turun (2.26 → 1.98). Skrip Colab/GPU siap namun belum dijalankan.
+- Fase 3 (berjalan): paket `src/llmbepees_cl/lora/` + skrip `03-finetune-lora/` (01 LoRA from-scratch, 02 LoRA pada MiniGPT, skrip Colab). CPU: LoRA ~3.6% parameter dilatih, loss contoh tahanan turun (2.26 → 1.98). **Colab T4 sudah dijalankan (2026-10-20)**: Qwen2.5-0.5B-Instruct, `trainable% 0.436%`, loss 3.913 → 2.705 (10 langkah); eval format dasar 0/3 vs LoRA 0/3 (jawaban identik — belum cukup data/langkah). Adaptor disimpan di Drive (`MyDrive/llm-bps/`). Temuan kompatibilitas Colab: uninstall `torchao`, `SFTConfig.max_length`, T4 → fp16 (bukan bf16).
 - Fase 4 selesai: paket `src/llmbepees_cl/rag/` + skrip `04-rag-bps/` (01 indeks → 04 tanya) & evaluasi `04-rag-bps/eval/` (52 pertanyaan). Baseline: akurasi 100% (44/44), sitasi 100% (34/34), abstain 100% (8/8), angka-via-tool 100% (10/10) — in-domain, jadi optimistis. Angka hanya dari tool `get_indicator` (data dummy); konsep ber-sitasi dari korpus contoh.
 - Fase 5 selesai: paket `src/llmbepees_cl/training/` + `src/llmbepees_cl/serving/` + skrip `05-serving/` (01 mekanika → 04 benchmark). Baseline latensi asisten (ekstraktif, in-process): p50 ~0,13 ms / p95 ~0,5 ms. Scaling law sintetis: loss vs parameter `~N^-0.19`. FastAPI diuji via `TestClient`. Mixed precision & distributed hanya konsep (CPU/1 GPU).
-- Fase 6 selesai: paket `src/llmbepees_cl/posttraining/` (DPO from-scratch) + `src/llmbepees_cl/evaluation/` (harness) + skrip `06-specialization/`. DPO MiniGPT (CPU): loss `ln 2 → ~0.003`, akurasi preferensi `0 → 1.0`, reward dipilih/ditolak `(0,0) → (2.5,-3.4)`. Benchmark **200 pertanyaan** (konsep/angka/abstain): semua metrik 100% (in-domain, optimistis). Ringkasan 6 paper di `papers/`. Skrip DPO open-weight (Colab) siap, belum dijalankan.
+- Fase 6 selesai: paket `src/llmbepees_cl/posttraining/` (DPO from-scratch) + `src/llmbepees_cl/evaluation/` (harness) + skrip `06-specialization/`. DPO MiniGPT (CPU): loss `ln 2 → ~0.003`, akurasi preferensi `0 → 1.0`, reward dipilih/ditolak `(0,0) → (2.5,-3.4)`. Benchmark **200 pertanyaan** (konsep/angka/abstain): semua metrik 100% (in-domain, optimistis). Ringkasan 6 paper di `papers/`. **Colab T4 sudah dijalankan (2026-10-20)**: QLoRA 4-bit, loss ln2 → 0.37 (5 langkah); adaptor di Drive. Temuan Colab: uninstall `torchao`, `processing_class`, T4 → fp16 & AMP off (bf16 tak didukung).
 - Git lokal diinisialisasi; repo ter-push ke GitHub (`tooncoderstis/llmbepees-cl`, publik) — CI Actions hijau (ruff + 74 tes + gitleaks).
 
 ## Yang belum selesai / menunggu
@@ -49,8 +49,9 @@
 | CI | ✅ GitHub Actions hijau (ruff + 74 tes + gitleaks) |
 | Deploy EasyPanel | ⬜ provision saat Fase 5 (asisten FastAPI belum ada) |
 | Data dokumen BPS | ⬜ dokumen publik nyata belum diletakkan di `04-rag-bps/data/` (tes pakai korpus contoh `SAMPLE_DOCS`) |
-| Fine-tune Colab (Fase 3) | ⬜ jalankan `03-finetune-lora/finetune_openweight_colab.py` di GPU; catat hasil di `notes.md` |
-| DPO Colab (Fase 6) | ⬜ jalankan `06-specialization/02_dpo_openweight_colab.py` di GPU; catat metrik reward di `notes.md` |
+| Fine-tune Colab (Fase 3) | ✅ dijalankan (T4, loss 3.91→2.71, 0,436% param) — hasil dicatat di `03-finetune-lora/notes.md`; perlu data/langkah lebih untuk ubah perilaku |
+| Perbaiki skrip Colab (Fase 3) | ✅ patch permanen: `pick_dtype` (T4→fp16), `SFTConfig.max_length`, `processing_class`, uninstall `torchao` (+ `COLAB.md`) — terverifikasi di T4 |
+| DPO Colab (Fase 6) | ✅ dijalankan (T4, QLoRA, loss ln2→0.37); catatan di `06-specialization/notes.md` |
 | Test set evaluasi nyata | ⬜ ganti draf test set (dari korpus) dengan 200–500 pertanyaan + jawaban acuan ahli substansi (ADR-0004) |
 | Serve LLM lokal (Fase 5) | ⬜ ganti mesin jawab ekstraktif `rag` dengan LLM lokal (Ollama/llama.cpp) lalu ukur latensi |
 | Latihan distributed/GPU (Fase 5) | ⬜ DDP/FSDP/bf16 praktik di Colab/sewaan (di laptop hanya konsep) |

@@ -18,6 +18,7 @@ Skrip di folder ini disiapkan untuk Colab/Kaggle dengan GPU.
 4. Pasang dependensi (sekali per sesi):
    ```bash
    !pip install -q "transformers>=4.45" "peft>=0.12" "trl>=0.11" "datasets>=2.20" accelerate
+   !pip uninstall -y -q torchao  # Colab sering memuat torchao lama -> peft menolak; torchao tak dipakai
    ```
 5. Latih adaptor LoRA:
    ```bash
@@ -41,6 +42,13 @@ Default: **`Qwen/Qwen2.5-0.5B-Instruct`** — kecil (cukup untuk T4 gratis), mul
 (baik untuk bahasa Indonesia), lisensi Apache-2.0. Alternatif:
 `meta-llama/Llama-3.2-1B-Instruct` (lisensi portal), `google/gemma-2-2b-it`,
 atau `microsoft/Phi-3.5-mini-instruct`.
+
+## Catatan GPU & kompatibilitas
+
+- Skrip memilih dtype otomatis (`pick_dtype`): **bf16** di GPU Ampere+ (A100/L4/G4),
+  **fp16** di GPU lama seperti **T4** (T4 tidak mendukung matmul bf16), **fp32** di CPU.
+- TRL terbaru memakai `SFTConfig(max_length=...)` (dahulu `max_seq_length`).
+- Bila `get_peft_model` gagal karena `torchao` versi lama, `!pip uninstall -y torchao`.
 
 ## Aturan data (penting)
 
