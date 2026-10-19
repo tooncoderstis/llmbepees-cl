@@ -8,8 +8,15 @@ Status terkini: [`STATUS.md`](STATUS.md).
 
 ## [Unreleased]
 ### Added
+- Fase 6 (Post-training & evaluasi): paket `src/llmbepees_cl/posttraining/` (DPO from-scratch: `sequence_logprobs`, `dpo_loss`, `train_dpo`, `evaluate_dpo` + dataset preferensi) dan `src/llmbepees_cl/evaluation/` (harness metrik + analisis kegagalan) + tes pytest.
+- Skrip `06-specialization/`: `01_dpo_from_scratch.py` (CPU), `02_dpo_openweight_colab.py` + `COLAB.md` (DPO/QLoRA Qwen2.5-0.5B-Instruct via TRL), `03_rl_concepts.md`; benchmark `eval/build_testset.py` (200 pertanyaan) + `eval/run_eval.py`; ringkasan paper `papers/README.md`; `PANDUAN.md` dan `notes.md`.
+- ADR-0004: evaluasi via harness bersama + test set dibangun dari korpus (draf).
 - Fase 5 (Mekanika training, scaling, serving): paket `src/llmbepees_cl/training/` (jadwal LR warmup+cosine, akumulasi gradien + clipping + autocast bf16, fit hukum pangkat) dan `src/llmbepees_cl/serving/` (API FastAPI: `/health`, `/ask`, `/indicators`; benchmark latensi p50/p95) + tes pytest.
 - Skrip belajar `05-serving/` (01 mekanika training, 02 scaling law sintetis, 03 serve, 04 benchmark) + `PANDUAN.md` dan `notes.md`; ekstra `serve` ditambah `httpx`.
+### Changed
+- `04-rag-bps/eval/run_eval.py` memakai paket `evaluation` (DRY); `README.md` diperluas (peta fase, contoh, hasil ringkas); `dev` extra menambah `fastapi`+`httpx`.
+- CI: `secret-scan` memakai gitleaks CLI (scan riwayat penuh) alih-alih action (gagal pada push pertama).
+- `requirements.txt`: `torch` diaktifkan (CPU); catatan pemasangan via index CPU.
 - Fase 4 (RAG + tool calling): paket `src/llmbepees_cl/rag/` — korpus contoh publik + pemuat dokumen, chunking ber-metadata, BM25 from-scratch, embedding hashing (+ opsi `sentence-transformers`), retrieval hybrid, reranker sadar-definisi, tool `get_indicator`, prompt sitasi/abstain, dan asisten ekstraktif ber-sitasi; + tes pytest.
 - Skrip belajar `04-rag-bps/src/` (01 indeks → 04 tanya) dan evaluasi `04-rag-bps/eval/` (test set 52 pertanyaan + `run_eval.py`, metrik akurasi/sitasi/abstain/angka-via-tool); dilengkapi `PANDUAN.md` dan `notes.md`.
 - Fase 3 (Fine-tuning LoRA): paket `src/llmbepees_cl/lora/` — `LoRALinear` from-scratch (+ `merged_weight`), `apply_lora` (membekukan bobot dasar), util hitung parameter, + tes pytest.
@@ -19,8 +26,6 @@ Status terkini: [`STATUS.md`](STATUS.md).
 - Fase 1 (Dasar PyTorch): paket `src/llmbepees_cl/basics/` (data sintetis & MNIST opsional, `MLP`, training loop, cek gradient numerik) + tes pytest.
 - Skrip belajar `01-pytorch-basics/` (01 NumPy → 06 MNIST opsional) beserta `notes.md`.
 - Ekstra opsional `vision` (torchvision) di `pyproject.toml`; CI memasang torch CPU dari index CPU.
-### Changed
-- `requirements.txt`: `torch` diaktifkan (CPU); catatan pemasangan via index CPU.
 
 ## [0.1.0] - 2026-10-17
 ### Added

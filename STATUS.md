@@ -9,7 +9,7 @@
 - **Platform**: Python 3.11 (NumPy → PyTorch CPU); ruff + pytest; hub portofolio via Node
 
 ## TL;DR (konteks 30 detik)
-`llmbepees-cl` adalah **jurnal belajar 12 minggu** (`ROADMAP.md`) yang sekaligus membangun **prototipe asisten BPS faktual & ber-sitasi** (konsep/definisi via RAG, angka hanya via tool). Ini **proyek baru terpisah** dari `llmbepees` (ADR-0003). Stack Python 3.11, PyTorch CPU, pip+venv+ruff+pytest. **Fase 0–2 selesai** — scaffold, dasar PyTorch (`01-pytorch-basics/`), dan transformer mini dari nol (`02-mini-gpt/`) dengan paket ber-tes `basics/` + `minigpt/`. **Fase 3 (Fine-tuning LoRA, M5–6) dikerjakan** — paket `src/llmbepees_cl/lora/` + skrip CPU `03-finetune-lora/` ber-tes; skrip Colab/GPU (`finetune_openweight_colab.py`) siap namun **belum dijalankan**. **Fase 4 (RAG + tool calling, M7–8) selesai** — paket `src/llmbepees_cl/rag/` (chunking, BM25+hashing, hybrid+reranker, tool `get_indicator`, asisten ekstraktif ber-sitasi) + skrip `04-rag-bps/` & evaluasi 52 pertanyaan (baseline akurasi/sitasi/abstain/angka-via-tool 100%). **Fase 5 (Mekanika training, scaling, serving, M9–10) selesai** — paket `src/llmbepees_cl/training/` (jadwal LR, akumulasi gradien+clipping, bf16, scaling law) & `src/llmbepees_cl/serving/` (API FastAPI `/health` `/ask` `/indicators` + benchmark latensi) + skrip `05-serving/`. Berikutnya: Fase 6 (post-training & evaluasi); selesaikan run Colab Fase 3.
+`llmbepees-cl` adalah **jurnal belajar 12 minggu** (`ROADMAP.md`) yang sekaligus membangun **prototipe asisten BPS faktual & ber-sitasi** (konsep/definisi via RAG, angka hanya via tool). Ini **proyek baru terpisah** dari `llmbepees` (ADR-0003). Stack Python 3.11, PyTorch CPU, pip+venv+ruff+pytest. **Fase 0–2 selesai** — scaffold, dasar PyTorch (`01-pytorch-basics/`), dan transformer mini dari nol (`02-mini-gpt/`) dengan paket ber-tes `basics/` + `minigpt/`. **Fase 4 (RAG + tool calling) selesai** — paket `rag/` + skrip `04-rag-bps/` & evaluasi (baseline 100%, in-domain). **Fase 5 (mekanika training, scaling, serving) selesai** — paket `training/` & `serving/` (API FastAPI + benchmark latensi) + skrip `05-serving/`. **Fase 6 (post-training & evaluasi) selesai** — paket `posttraining/` (DPO from-scratch) & `evaluation/` (harness + analisis kegagalan) + skrip `06-specialization/` (DPO CPU, benchmark **200 pertanyaan** 100%, ringkasan paper) + ADR-0004. **Fase 3 (LoRA) dikerjakan** — paket `lora/` + skrip CPU `03-finetune-lora/` ber-tes; skrip Colab/GPU siap namun **belum dijalankan**. Repo publik `tooncoderstis/llmbepees-cl`, CI hijau. Berikutnya: jalankan Colab (Fase 3 & DPO) di GPU; susun test set ahli.
 
 ## Checklist Tahap
 | Fase | Judul | Status |
@@ -20,7 +20,7 @@
 | 3 | Fine-tuning LoRA (M5–6) | 🔄 |
 | 4 | RAG + tool calling: prototipe asisten BPS (M7–8) | ✅ |
 | 5 | Mekanika training, scaling, serving (M9–10) | ✅ |
-| 6 | Jalur lab model: post-training & evaluasi (M11–12) | ⬜ |
+| 6 | Jalur lab model: post-training & evaluasi (M11–12) | ✅ |
 
 > Fase dikerjakan: tandai 🔄 saat mulai dan ✅ saat selesai, lalu jalankan `npm run hub:report` di tiap perubahan — hub portofolio mengirim notifikasi (inbox + Web Push).
 
@@ -28,7 +28,7 @@
 1. **Baca `STATUS.md` ini** — kondisi & langkah berikutnya ada di sini.
 2. **Pasang lingkungan**: `python -m venv .venv` lalu `.venv\Scripts\python -m pip install -e ".[dev]"`.
 3. **Verifikasi cepat**: `.venv\Scripts\ruff check .` dan `.venv\Scripts\pytest`.
-4. **Lanjutkan Fase 6 (post-training & evaluasi)**: jalur lab model — preference tuning (DPO), dasar RL for LLM, benchmark evaluasi sendiri di `06-specialization/`. Opsional: ganti mesin jawab `rag` dengan LLM lokal (Ollama/llama.cpp) lalu ukur latensi lagi. Fase 3 (run Colab) tetap menunggu.
+4. **Setelah 12 minggu** (`ROADMAP.md`): jalankan Colab Fase 3 & DPO open-weight (GPU), lalu langkah lanjut — reproduksi paper kecil, kontribusi open-source, tulisan teknis, pilih bidang (infrastruktur training / evals-data / alignment).
 
 ## Kondisi saat ini
 - Scaffold awal dibuat dari skill `aasaprojectkit`: dokumen (PRD/STATUS/CHANGELOG/ADR), health files, CI, scaffold deploy, dan hub.
@@ -38,6 +38,7 @@
 - Fase 3 (berjalan): paket `src/llmbepees_cl/lora/` + skrip `03-finetune-lora/` (01 LoRA from-scratch, 02 LoRA pada MiniGPT, + skrip Colab). CPU: LoRA ~3.6% parameter dilatih, loss contoh tahanan turun (2.26 → 1.98). Skrip Colab/GPU siap namun belum dijalankan.
 - Fase 4 selesai: paket `src/llmbepees_cl/rag/` + skrip `04-rag-bps/` (01 indeks → 04 tanya) & evaluasi `04-rag-bps/eval/` (52 pertanyaan). Baseline: akurasi 100% (44/44), sitasi 100% (34/34), abstain 100% (8/8), angka-via-tool 100% (10/10) — in-domain, jadi optimistis. Angka hanya dari tool `get_indicator` (data dummy); konsep ber-sitasi dari korpus contoh.
 - Fase 5 selesai: paket `src/llmbepees_cl/training/` + `src/llmbepees_cl/serving/` + skrip `05-serving/` (01 mekanika → 04 benchmark). Baseline latensi asisten (ekstraktif, in-process): p50 ~0,13 ms / p95 ~0,5 ms. Scaling law sintetis: loss vs parameter `~N^-0.19`. FastAPI diuji via `TestClient`. Mixed precision & distributed hanya konsep (CPU/1 GPU).
+- Fase 6 selesai: paket `src/llmbepees_cl/posttraining/` (DPO from-scratch) + `src/llmbepees_cl/evaluation/` (harness) + skrip `06-specialization/`. DPO MiniGPT (CPU): loss `ln 2 → ~0.003`, akurasi preferensi `0 → 1.0`, reward dipilih/ditolak `(0,0) → (2.5,-3.4)`. Benchmark **200 pertanyaan** (konsep/angka/abstain): semua metrik 100% (in-domain, optimistis). Ringkasan 6 paper di `papers/`. Skrip DPO open-weight (Colab) siap, belum dijalankan.
 - Git lokal diinisialisasi; repo ter-push ke GitHub (`tooncoderstis/llmbepees-cl`, publik) — CI Actions hijau (ruff + 74 tes + gitleaks).
 
 ## Yang belum selesai / menunggu
@@ -48,8 +49,9 @@
 | CI | ✅ GitHub Actions hijau (ruff + 74 tes + gitleaks) |
 | Deploy EasyPanel | ⬜ provision saat Fase 5 (asisten FastAPI belum ada) |
 | Data dokumen BPS | ⬜ dokumen publik nyata belum diletakkan di `04-rag-bps/data/` (tes pakai korpus contoh `SAMPLE_DOCS`) |
-| Test set evaluasi nyata | ⬜ test set 200–500 pertanyaan + jawaban acuan ahli substansi (Fase 6); baseline 52 pertanyaan sudah ada |
 | Fine-tune Colab (Fase 3) | ⬜ jalankan `03-finetune-lora/finetune_openweight_colab.py` di GPU; catat hasil di `notes.md` |
+| DPO Colab (Fase 6) | ⬜ jalankan `06-specialization/02_dpo_openweight_colab.py` di GPU; catat metrik reward di `notes.md` |
+| Test set evaluasi nyata | ⬜ ganti draf test set (dari korpus) dengan 200–500 pertanyaan + jawaban acuan ahli substansi (ADR-0004) |
 | Serve LLM lokal (Fase 5) | ⬜ ganti mesin jawab ekstraktif `rag` dengan LLM lokal (Ollama/llama.cpp) lalu ukur latensi |
 | Latihan distributed/GPU (Fase 5) | ⬜ DDP/FSDP/bf16 praktik di Colab/sewaan (di laptop hanya konsep) |
 

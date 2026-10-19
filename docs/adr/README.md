@@ -15,3 +15,4 @@ Status: **Diterima** · **Ditolak** · **Digantikan oleh ADR-XXXX** · **Depreca
 | [0001](0001-stack-python-pytorch.md) | Stack Python (NumPy → PyTorch CPU), tooling pip+venv+ruff+pytest | Diterima | 2026-10-17 |
 | [0002](0002-deploy-easypanel.md) | Deploy EasyPanel via Docker image (programatik MCP/CLI) | Diterima | 2026-10-17 |
 | [0003](0003-proyek-terpisah-dari-llmbepees.md) | Proyek terpisah dari `llmbepees` | Diterima | 2026-10-17 |
+| [0004](0004-evaluasi-harness-dan-testset-draf.md) | Evaluasi via harness bersama + test set dibangun dari korpus (draf) | Diterima | 2026-10-19 |
