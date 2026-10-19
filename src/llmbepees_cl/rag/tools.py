@@ -50,6 +50,21 @@ def available_indicators() -> list[str]:
     return sorted({key[0] for key in _RAW})
 
 
+def all_records() -> list[dict[str, object]]:
+    """Semua baris data tool (indikator, wilayah, periode, nilai, satuan), terurut."""
+    rows = [
+        {
+            "indicator": indicator,
+            "region": region,
+            "period": period,
+            "value": record["value"],
+            "unit": record["unit"],
+        }
+        for (indicator, region, period), record in _RAW.items()
+    ]
+    return sorted(rows, key=lambda r: (str(r["indicator"]), str(r["period"])))
+
+
 def detect_indicator(question: str) -> str | None:
     """Tebak indikator yang dimaksud pertanyaan (alias terpanjang menang)."""
     text = _norm(question)

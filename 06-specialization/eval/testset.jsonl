@@ -1,0 +1,200 @@
+{"id": "c000", "type": "concept", "question": "Apa itu Populasi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["keseluruhan objek atau penduduk"]}
+{"id": "c001", "type": "concept", "question": "Apa definisi Populasi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["keseluruhan objek atau penduduk"]}
+{"id": "c002", "type": "concept", "question": "Jelaskan konsep Populasi.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["keseluruhan objek atau penduduk"]}
+{"id": "c003", "type": "concept", "question": "Apa yang dimaksud dengan Populasi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["keseluruhan objek atau penduduk"]}
+{"id": "c004", "type": "concept", "question": "Definisi Populasi adalah apa?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["keseluruhan objek atau penduduk"]}
+{"id": "c005", "type": "concept", "question": "Apa itu Sampel?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["bagian dari populasi yang"]}
+{"id": "c006", "type": "concept", "question": "Apa definisi Sampel?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["bagian dari populasi yang"]}
+{"id": "c007", "type": "concept", "question": "Jelaskan konsep Sampel.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["bagian dari populasi yang"]}
+{"id": "c008", "type": "concept", "question": "Apa yang dimaksud dengan Sampel?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["bagian dari populasi yang"]}
+{"id": "c009", "type": "concept", "question": "Definisi Sampel adalah apa?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["bagian dari populasi yang"]}
+{"id": "c010", "type": "concept", "question": "Apa itu Sensus?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["pencacahan lengkap terhadap seluruh"]}
+{"id": "c011", "type": "concept", "question": "Apa definisi Sensus?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["pencacahan lengkap terhadap seluruh"]}
+{"id": "c012", "type": "concept", "question": "Jelaskan konsep Sensus.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["pencacahan lengkap terhadap seluruh"]}
+{"id": "c013", "type": "concept", "question": "Apa yang dimaksud dengan Sensus?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["pencacahan lengkap terhadap seluruh"]}
+{"id": "c014", "type": "concept", "question": "Definisi Sensus adalah apa?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["pencacahan lengkap terhadap seluruh"]}
+{"id": "c015", "type": "concept", "question": "Apa itu Survei?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["pencacahan pada sebagian populasi"]}
+{"id": "c016", "type": "concept", "question": "Apa definisi Survei?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["pencacahan pada sebagian populasi"]}
+{"id": "c017", "type": "concept", "question": "Jelaskan konsep Survei.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["pencacahan pada sebagian populasi"]}
+{"id": "c018", "type": "concept", "question": "Apa yang dimaksud dengan Survei?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["pencacahan pada sebagian populasi"]}
+{"id": "c019", "type": "concept", "question": "Definisi Survei adalah apa?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["pencacahan pada sebagian populasi"]}
+{"id": "c020", "type": "concept", "question": "Apa itu Pengangguran?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["keadaan seseorang yang termasuk"]}
+{"id": "c021", "type": "concept", "question": "Apa definisi Pengangguran?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["keadaan seseorang yang termasuk"]}
+{"id": "c022", "type": "concept", "question": "Jelaskan konsep Pengangguran.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["keadaan seseorang yang termasuk"]}
+{"id": "c023", "type": "concept", "question": "Apa yang dimaksud dengan Pengangguran?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["keadaan seseorang yang termasuk"]}
+{"id": "c024", "type": "concept", "question": "Definisi Pengangguran adalah apa?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["keadaan seseorang yang termasuk"]}
+{"id": "c025", "type": "concept", "question": "Apa itu Tingkat pengangguran terbuka?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["persentase jumlah pengangguran terhadap"]}
+{"id": "c026", "type": "concept", "question": "Apa definisi Tingkat pengangguran terbuka?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["persentase jumlah pengangguran terhadap"]}
+{"id": "c027", "type": "concept", "question": "Jelaskan konsep Tingkat pengangguran terbuka.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["persentase jumlah pengangguran terhadap"]}
+{"id": "c028", "type": "concept", "question": "Apa yang dimaksud dengan Tingkat pengangguran terbuka?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["persentase jumlah pengangguran terhadap"]}
+{"id": "c029", "type": "concept", "question": "Definisi Tingkat pengangguran terbuka adalah apa?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["persentase jumlah pengangguran terhadap"]}
+{"id": "c030", "type": "concept", "question": "Apa itu Inflasi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["kecenderungan naiknya harga barang"]}
+{"id": "c031", "type": "concept", "question": "Apa definisi Inflasi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["kecenderungan naiknya harga barang"]}
+{"id": "c032", "type": "concept", "question": "Jelaskan konsep Inflasi.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["kecenderungan naiknya harga barang"]}
+{"id": "c033", "type": "concept", "question": "Apa yang dimaksud dengan Inflasi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["kecenderungan naiknya harga barang"]}
+{"id": "c034", "type": "concept", "question": "Definisi Inflasi adalah apa?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["kecenderungan naiknya harga barang"]}
+{"id": "c035", "type": "concept", "question": "Apa itu Deflasi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["kecenderungan turunnya harga barang"]}
+{"id": "c036", "type": "concept", "question": "Apa definisi Deflasi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["kecenderungan turunnya harga barang"]}
+{"id": "c037", "type": "concept", "question": "Jelaskan konsep Deflasi.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["kecenderungan turunnya harga barang"]}
+{"id": "c038", "type": "concept", "question": "Apa yang dimaksud dengan Deflasi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["kecenderungan turunnya harga barang"]}
+{"id": "c039", "type": "concept", "question": "Definisi Deflasi adalah apa?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["kecenderungan turunnya harga barang"]}
+{"id": "c040", "type": "concept", "question": "Apa itu Indeks harga konsumen?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["ukuran perubahan harga sekelompok"]}
+{"id": "c041", "type": "concept", "question": "Apa definisi Indeks harga konsumen?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["ukuran perubahan harga sekelompok"]}
+{"id": "c042", "type": "concept", "question": "Jelaskan konsep Indeks harga konsumen.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["ukuran perubahan harga sekelompok"]}
+{"id": "c043", "type": "concept", "question": "Apa yang dimaksud dengan Indeks harga konsumen?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["ukuran perubahan harga sekelompok"]}
+{"id": "c044", "type": "concept", "question": "Definisi Indeks harga konsumen adalah apa?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["ukuran perubahan harga sekelompok"]}
+{"id": "c045", "type": "concept", "question": "Apa itu Nilai tukar?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["harga mata uang suatu"]}
+{"id": "c046", "type": "concept", "question": "Apa definisi Nilai tukar?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["harga mata uang suatu"]}
+{"id": "c047", "type": "concept", "question": "Jelaskan konsep Nilai tukar.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["harga mata uang suatu"]}
+{"id": "c048", "type": "concept", "question": "Apa yang dimaksud dengan Nilai tukar?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["harga mata uang suatu"]}
+{"id": "c049", "type": "concept", "question": "Definisi Nilai tukar adalah apa?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["harga mata uang suatu"]}
+{"id": "c050", "type": "concept", "question": "Apa itu Produk domestik bruto?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["nilai seluruh barang dan"]}
+{"id": "c051", "type": "concept", "question": "Apa definisi Produk domestik bruto?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["nilai seluruh barang dan"]}
+{"id": "c052", "type": "concept", "question": "Jelaskan konsep Produk domestik bruto.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["nilai seluruh barang dan"]}
+{"id": "c053", "type": "concept", "question": "Apa yang dimaksud dengan Produk domestik bruto?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["nilai seluruh barang dan"]}
+{"id": "c054", "type": "concept", "question": "Definisi Produk domestik bruto adalah apa?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["nilai seluruh barang dan"]}
+{"id": "c055", "type": "concept", "question": "Apa itu Pertumbuhan ekonomi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["kenaikan produk domestik bruto"]}
+{"id": "c056", "type": "concept", "question": "Apa definisi Pertumbuhan ekonomi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["kenaikan produk domestik bruto"]}
+{"id": "c057", "type": "concept", "question": "Jelaskan konsep Pertumbuhan ekonomi.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["kenaikan produk domestik bruto"]}
+{"id": "c058", "type": "concept", "question": "Apa yang dimaksud dengan Pertumbuhan ekonomi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["kenaikan produk domestik bruto"]}
+{"id": "c059", "type": "concept", "question": "Definisi Pertumbuhan ekonomi adalah apa?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["kenaikan produk domestik bruto"]}
+{"id": "c060", "type": "concept", "question": "Apa itu Kemiskinan?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["keadaan tidak mampu memenuhi"]}
+{"id": "c061", "type": "concept", "question": "Apa definisi Kemiskinan?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["keadaan tidak mampu memenuhi"]}
+{"id": "c062", "type": "concept", "question": "Jelaskan konsep Kemiskinan.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["keadaan tidak mampu memenuhi"]}
+{"id": "c063", "type": "concept", "question": "Apa yang dimaksud dengan Kemiskinan?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["keadaan tidak mampu memenuhi"]}
+{"id": "c064", "type": "concept", "question": "Definisi Kemiskinan adalah apa?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["keadaan tidak mampu memenuhi"]}
+{"id": "c065", "type": "concept", "question": "Apa itu Garis kemiskinan?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["batas nilai pengeluaran minimum"]}
+{"id": "c066", "type": "concept", "question": "Apa definisi Garis kemiskinan?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["batas nilai pengeluaran minimum"]}
+{"id": "c067", "type": "concept", "question": "Jelaskan konsep Garis kemiskinan.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["batas nilai pengeluaran minimum"]}
+{"id": "c068", "type": "concept", "question": "Apa yang dimaksud dengan Garis kemiskinan?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["batas nilai pengeluaran minimum"]}
+{"id": "c069", "type": "concept", "question": "Definisi Garis kemiskinan adalah apa?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["batas nilai pengeluaran minimum"]}
+{"id": "c070", "type": "concept", "question": "Apa itu Data resmi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["data statistik yang diterbitkan"]}
+{"id": "c071", "type": "concept", "question": "Apa definisi Data resmi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["data statistik yang diterbitkan"]}
+{"id": "c072", "type": "concept", "question": "Jelaskan konsep Data resmi.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["data statistik yang diterbitkan"]}
+{"id": "c073", "type": "concept", "question": "Apa yang dimaksud dengan Data resmi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["data statistik yang diterbitkan"]}
+{"id": "c074", "type": "concept", "question": "Definisi Data resmi adalah apa?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["data statistik yang diterbitkan"]}
+{"id": "c075", "type": "concept", "question": "Apa itu Metadata?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["informasi yang menjelaskan arti"]}
+{"id": "c076", "type": "concept", "question": "Apa definisi Metadata?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["informasi yang menjelaskan arti"]}
+{"id": "c077", "type": "concept", "question": "Jelaskan konsep Metadata.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["informasi yang menjelaskan arti"]}
+{"id": "c078", "type": "concept", "question": "Apa yang dimaksud dengan Metadata?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["informasi yang menjelaskan arti"]}
+{"id": "c079", "type": "concept", "question": "Definisi Metadata adalah apa?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["informasi yang menjelaskan arti"]}
+{"id": "c080", "type": "concept", "question": "Apa itu Definisi operasional?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["penjelasan cara sebuah konsep"]}
+{"id": "c081", "type": "concept", "question": "Apa definisi Definisi operasional?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["penjelasan cara sebuah konsep"]}
+{"id": "c082", "type": "concept", "question": "Jelaskan konsep Definisi operasional.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["penjelasan cara sebuah konsep"]}
+{"id": "c083", "type": "concept", "question": "Apa yang dimaksud dengan Definisi operasional?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["penjelasan cara sebuah konsep"]}
+{"id": "c084", "type": "concept", "question": "Definisi Definisi operasional adalah apa?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["penjelasan cara sebuah konsep"]}
+{"id": "c085", "type": "concept", "question": "Apa itu Satuan?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["ukuran yang dipakai pada"]}
+{"id": "c086", "type": "concept", "question": "Apa definisi Satuan?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["ukuran yang dipakai pada"]}
+{"id": "c087", "type": "concept", "question": "Jelaskan konsep Satuan.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["ukuran yang dipakai pada"]}
+{"id": "c088", "type": "concept", "question": "Apa yang dimaksud dengan Satuan?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["ukuran yang dipakai pada"]}
+{"id": "c089", "type": "concept", "question": "Definisi Satuan adalah apa?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["ukuran yang dipakai pada"]}
+{"id": "c090", "type": "concept", "question": "Apa itu Periode?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["rentang waktu pengamatan suatu"]}
+{"id": "c091", "type": "concept", "question": "Apa definisi Periode?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["rentang waktu pengamatan suatu"]}
+{"id": "c092", "type": "concept", "question": "Jelaskan konsep Periode.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["rentang waktu pengamatan suatu"]}
+{"id": "c093", "type": "concept", "question": "Apa yang dimaksud dengan Periode?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["rentang waktu pengamatan suatu"]}
+{"id": "c094", "type": "concept", "question": "Definisi Periode adalah apa?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["rentang waktu pengamatan suatu"]}
+{"id": "c095", "type": "concept", "question": "Apa itu Wilayah?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["cakupan tempat suatu data"]}
+{"id": "c096", "type": "concept", "question": "Apa definisi Wilayah?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["cakupan tempat suatu data"]}
+{"id": "c097", "type": "concept", "question": "Jelaskan konsep Wilayah.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["cakupan tempat suatu data"]}
+{"id": "c098", "type": "concept", "question": "Apa yang dimaksud dengan Wilayah?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["cakupan tempat suatu data"]}
+{"id": "c099", "type": "concept", "question": "Definisi Wilayah adalah apa?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["cakupan tempat suatu data"]}
+{"id": "c100", "type": "concept", "question": "Apa itu Penyajian data?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["cara menyampaikan data kepada"]}
+{"id": "c101", "type": "concept", "question": "Apa definisi Penyajian data?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["cara menyampaikan data kepada"]}
+{"id": "c102", "type": "concept", "question": "Jelaskan konsep Penyajian data.", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["cara menyampaikan data kepada"]}
+{"id": "c103", "type": "concept", "question": "Apa yang dimaksud dengan Penyajian data?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["cara menyampaikan data kepada"]}
+{"id": "c104", "type": "concept", "question": "Definisi Penyajian data adalah apa?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["cara menyampaikan data kepada"]}
+{"id": "c105", "type": "concept", "question": "Apa itu Tabel?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["penyajian data dalam baris"]}
+{"id": "c106", "type": "concept", "question": "Apa definisi Tabel?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["penyajian data dalam baris"]}
+{"id": "c107", "type": "concept", "question": "Jelaskan konsep Tabel.", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["penyajian data dalam baris"]}
+{"id": "c108", "type": "concept", "question": "Apa yang dimaksud dengan Tabel?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["penyajian data dalam baris"]}
+{"id": "c109", "type": "concept", "question": "Definisi Tabel adalah apa?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["penyajian data dalam baris"]}
+{"id": "c110", "type": "concept", "question": "Apa itu Grafik?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["penyajian data secara visual"]}
+{"id": "c111", "type": "concept", "question": "Apa definisi Grafik?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["penyajian data secara visual"]}
+{"id": "c112", "type": "concept", "question": "Jelaskan konsep Grafik.", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["penyajian data secara visual"]}
+{"id": "c113", "type": "concept", "question": "Apa yang dimaksud dengan Grafik?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["penyajian data secara visual"]}
+{"id": "c114", "type": "concept", "question": "Definisi Grafik adalah apa?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["penyajian data secara visual"]}
+{"id": "c115", "type": "concept", "question": "Apa itu Rasio?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["perbandingan antara dua nilai"]}
+{"id": "c116", "type": "concept", "question": "Apa definisi Rasio?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["perbandingan antara dua nilai"]}
+{"id": "c117", "type": "concept", "question": "Jelaskan konsep Rasio.", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["perbandingan antara dua nilai"]}
+{"id": "c118", "type": "concept", "question": "Apa yang dimaksud dengan Rasio?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["perbandingan antara dua nilai"]}
+{"id": "c119", "type": "concept", "question": "Definisi Rasio adalah apa?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["perbandingan antara dua nilai"]}
+{"id": "c120", "type": "concept", "question": "Apa itu Sumber data?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["asal data yang dapat"]}
+{"id": "c121", "type": "concept", "question": "Apa definisi Sumber data?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["asal data yang dapat"]}
+{"id": "c122", "type": "concept", "question": "Jelaskan konsep Sumber data.", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["asal data yang dapat"]}
+{"id": "c123", "type": "concept", "question": "Apa yang dimaksud dengan Sumber data?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["asal data yang dapat"]}
+{"id": "c124", "type": "concept", "question": "Definisi Sumber data adalah apa?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["asal data yang dapat"]}
+{"id": "c125", "type": "concept", "question": "Apa itu Sitasi?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["pencantuman rujukan sumber, biasanya"]}
+{"id": "c126", "type": "concept", "question": "Apa definisi Sitasi?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["pencantuman rujukan sumber, biasanya"]}
+{"id": "c127", "type": "concept", "question": "Jelaskan konsep Sitasi.", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["pencantuman rujukan sumber, biasanya"]}
+{"id": "c128", "type": "concept", "question": "Apa yang dimaksud dengan Sitasi?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["pencantuman rujukan sumber, biasanya"]}
+{"id": "c129", "type": "concept", "question": "Definisi Sitasi adalah apa?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["pencantuman rujukan sumber, biasanya"]}
+{"id": "c130", "type": "concept", "question": "Apa itu Dokumen publik?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["dokumen yang boleh diakses"]}
+{"id": "c131", "type": "concept", "question": "Apa definisi Dokumen publik?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["dokumen yang boleh diakses"]}
+{"id": "c132", "type": "concept", "question": "Jelaskan konsep Dokumen publik.", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["dokumen yang boleh diakses"]}
+{"id": "c133", "type": "concept", "question": "Apa yang dimaksud dengan Dokumen publik?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["dokumen yang boleh diakses"]}
+{"id": "c134", "type": "concept", "question": "Definisi Dokumen publik adalah apa?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["dokumen yang boleh diakses"]}
+{"id": "c135", "type": "concept", "question": "Apa itu Proporsi?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["perbandingan yang menyatakan bagian"]}
+{"id": "c136", "type": "concept", "question": "Apa definisi Proporsi?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["perbandingan yang menyatakan bagian"]}
+{"id": "c137", "type": "concept", "question": "Jelaskan konsep Proporsi.", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["perbandingan yang menyatakan bagian"]}
+{"id": "c138", "type": "concept", "question": "Apa yang dimaksud dengan Proporsi?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["perbandingan yang menyatakan bagian"]}
+{"id": "c139", "type": "concept", "question": "Definisi Proporsi adalah apa?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["perbandingan yang menyatakan bagian"]}
+{"id": "n000", "type": "number", "question": "Berapa garis kemiskinan indonesia 2023?", "expect_tool": "garis kemiskinan", "must_contain": ["515530", "rupiah"]}
+{"id": "n001", "type": "number", "question": "Berapa nilai garis kemiskinan indonesia 2023?", "expect_tool": "garis kemiskinan", "must_contain": ["515530", "rupiah"]}
+{"id": "n002", "type": "number", "question": "Berapa inflasi indonesia 2022?", "expect_tool": "inflasi", "must_contain": ["5.51", "persen"]}
+{"id": "n003", "type": "number", "question": "Berapa nilai inflasi indonesia 2022?", "expect_tool": "inflasi", "must_contain": ["5.51", "persen"]}
+{"id": "n004", "type": "number", "question": "Berapa inflasi indonesia 2023?", "expect_tool": "inflasi", "must_contain": ["3.67", "persen"]}
+{"id": "n005", "type": "number", "question": "Berapa nilai inflasi indonesia 2023?", "expect_tool": "inflasi", "must_contain": ["3.67", "persen"]}
+{"id": "n006", "type": "number", "question": "Berapa inflasi indonesia 2024?", "expect_tool": "inflasi", "must_contain": ["2.57", "persen"]}
+{"id": "n007", "type": "number", "question": "Berapa nilai inflasi indonesia 2024?", "expect_tool": "inflasi", "must_contain": ["2.57", "persen"]}
+{"id": "n008", "type": "number", "question": "Berapa jumlah penduduk indonesia 2023?", "expect_tool": "jumlah penduduk", "must_contain": ["278.7", "juta"]}
+{"id": "n009", "type": "number", "question": "Berapa nilai jumlah penduduk indonesia 2023?", "expect_tool": "jumlah penduduk", "must_contain": ["278.7", "juta"]}
+{"id": "n010", "type": "number", "question": "Berapa jumlah penduduk indonesia 2024?", "expect_tool": "jumlah penduduk", "must_contain": ["281.6", "juta"]}
+{"id": "n011", "type": "number", "question": "Berapa nilai jumlah penduduk indonesia 2024?", "expect_tool": "jumlah penduduk", "must_contain": ["281.6", "juta"]}
+{"id": "n012", "type": "number", "question": "Berapa pertumbuhan ekonomi indonesia 2023?", "expect_tool": "pertumbuhan ekonomi", "must_contain": ["5.05", "persen"]}
+{"id": "n013", "type": "number", "question": "Berapa nilai pertumbuhan ekonomi indonesia 2023?", "expect_tool": "pertumbuhan ekonomi", "must_contain": ["5.05", "persen"]}
+{"id": "n014", "type": "number", "question": "Berapa pertumbuhan ekonomi indonesia 2024?", "expect_tool": "pertumbuhan ekonomi", "must_contain": ["5.03", "persen"]}
+{"id": "n015", "type": "number", "question": "Berapa nilai pertumbuhan ekonomi indonesia 2024?", "expect_tool": "pertumbuhan ekonomi", "must_contain": ["5.03", "persen"]}
+{"id": "n016", "type": "number", "question": "Berapa tingkat pengangguran terbuka indonesia 2023?", "expect_tool": "tingkat pengangguran terbuka", "must_contain": ["5.32", "persen"]}
+{"id": "n017", "type": "number", "question": "Berapa nilai tingkat pengangguran terbuka indonesia 2023?", "expect_tool": "tingkat pengangguran terbuka", "must_contain": ["5.32", "persen"]}
+{"id": "n018", "type": "number", "question": "Berapa tingkat pengangguran terbuka indonesia 2024?", "expect_tool": "tingkat pengangguran terbuka", "must_contain": ["4.91", "persen"]}
+{"id": "n019", "type": "number", "question": "Berapa nilai tingkat pengangguran terbuka indonesia 2024?", "expect_tool": "tingkat pengangguran terbuka", "must_contain": ["4.91", "persen"]}
+{"id": "a000", "type": "abstain", "question": "Apa warna langit saat senja?", "should_abstain": true}
+{"id": "a001", "type": "abstain", "question": "Bagaimana cara membuat rendang?", "should_abstain": true}
+{"id": "a002", "type": "abstain", "question": "Siapa penemu lampu pijar?", "should_abstain": true}
+{"id": "a003", "type": "abstain", "question": "Apa makanan khas Jepang?", "should_abstain": true}
+{"id": "a004", "type": "abstain", "question": "Apa itu kucing persia?", "should_abstain": true}
+{"id": "a005", "type": "abstain", "question": "Bagaimana cara merawat tanaman hias?", "should_abstain": true}
+{"id": "a006", "type": "abstain", "question": "Apa ibu kota Prancis?", "should_abstain": true}
+{"id": "a007", "type": "abstain", "question": "Siapa pelatih tim nasional Brasil?", "should_abstain": true}
+{"id": "a008", "type": "abstain", "question": "Apa lagu kebangsaan Islandia?", "should_abstain": true}
+{"id": "a009", "type": "abstain", "question": "Bagaimana cuaca di London hari ini?", "should_abstain": true}
+{"id": "a010", "type": "abstain", "question": "Apa warna bendera BPS?", "should_abstain": true}
+{"id": "a011", "type": "abstain", "question": "Apa bahan utama kue lapis?", "should_abstain": true}
+{"id": "a012", "type": "abstain", "question": "Siapa pemenang piala dunia sepak bola 2014?", "should_abstain": true}
+{"id": "a013", "type": "abstain", "question": "Bagaimana cara menyetel gitar?", "should_abstain": true}
+{"id": "a014", "type": "abstain", "question": "Apa itu fotosintesis?", "should_abstain": true}
+{"id": "a015", "type": "abstain", "question": "Apa planet terbesar di tata surya?", "should_abstain": true}
+{"id": "a016", "type": "abstain", "question": "Bagaimana cara belajar bermain piano?", "should_abstain": true}
+{"id": "a017", "type": "abstain", "question": "Apa hewan tercepat di darat?", "should_abstain": true}
+{"id": "a018", "type": "abstain", "question": "Siapa presiden pertama Amerika Serikat?", "should_abstain": true}
+{"id": "a019", "type": "abstain", "question": "Apa gunung tertinggi di dunia?", "should_abstain": true}
+{"id": "a020", "type": "abstain", "question": "Bagaimana membuat kopi susu?", "should_abstain": true}
+{"id": "a021", "type": "abstain", "question": "Apa warna bulu panda?", "should_abstain": true}
+{"id": "a022", "type": "abstain", "question": "Siapa penulis novel Laskar Pelangi?", "should_abstain": true}
+{"id": "a023", "type": "abstain", "question": "Bagaimana cara mengendarai sepeda?", "should_abstain": true}
+{"id": "a024", "type": "abstain", "question": "Apa itu gravitasi?", "should_abstain": true}
+{"id": "a025", "type": "abstain", "question": "Apa bahasa resmi Mesir?", "should_abstain": true}
+{"id": "a026", "type": "abstain", "question": "Siapa komponis Simfoni Nomor Sembilan?", "should_abstain": true}
+{"id": "a027", "type": "abstain", "question": "Bagaimana cara menanam anggrek?", "should_abstain": true}
+{"id": "a028", "type": "abstain", "question": "Apa bahan pembuat kaca?", "should_abstain": true}
+{"id": "a029", "type": "abstain", "question": "Apa itu pelangi?", "should_abstain": true}
+{"id": "a030", "type": "abstain", "question": "Bagaimana cara membuat tempe?", "should_abstain": true}
+{"id": "a031", "type": "abstain", "question": "Siapa pelari tercepat di dunia?", "should_abstain": true}
+{"id": "a032", "type": "abstain", "question": "Apa makanan khas Italia?", "should_abstain": true}
+{"id": "a033", "type": "abstain", "question": "Bagaimana cara memainkan gitar akustik?", "should_abstain": true}
+{"id": "a034", "type": "abstain", "question": "Apa itu gunung berapi?", "should_abstain": true}
+{"id": "a035", "type": "abstain", "question": "Siapa sekretaris jenderal PBB saat ini?", "should_abstain": true}
+{"id": "a036", "type": "abstain", "question": "Apa warna buah mangga matang?", "should_abstain": true}
+{"id": "a037", "type": "abstain", "question": "Bagaimana cara membuat origami burung?", "should_abstain": true}
+{"id": "a038", "type": "abstain", "question": "Apa itu bintang jatuh?", "should_abstain": true}
+{"id": "a039", "type": "abstain", "question": "Bagaimana cara memelihara ikan hias?", "should_abstain": true}

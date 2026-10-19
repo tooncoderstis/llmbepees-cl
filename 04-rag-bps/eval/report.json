@@ -4,5 +4,10 @@
   "citation_accuracy": 1.0,
   "abstain_accuracy": 1.0,
   "number_tool_compliance": 1.0,
+  "by_type": {
+    "concept": 34,
+    "number": 10,
+    "abstain": 8
+  },
   "failures": []
 }

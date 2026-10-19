@@ -1,0 +1,13 @@
+{
+  "total": 200,
+  "accuracy": 1.0,
+  "citation_accuracy": 1.0,
+  "abstain_accuracy": 1.0,
+  "number_tool_compliance": 1.0,
+  "by_type": {
+    "concept": 140,
+    "number": 20,
+    "abstain": 40
+  },
+  "failures": []
+}

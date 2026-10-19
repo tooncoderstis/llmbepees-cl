@@ -19,7 +19,7 @@ from llmbepees_cl.rag.embedding import (
 from llmbepees_cl.rag.prompt import SYSTEM_PROMPT, build_context, build_prompt
 from llmbepees_cl.rag.reranker import LexicalReranker
 from llmbepees_cl.rag.retrieval import HybridRetriever, ScoredPassage
-from llmbepees_cl.rag.tools import available_indicators, get_indicator
+from llmbepees_cl.rag.tools import all_records, available_indicators, get_indicator
 
 __all__ = [
     "SAMPLE_DOCS",
@@ -34,6 +34,7 @@ __all__ = [
     "Passage",
     "ScoredPassage",
     "SentenceTransformerEmbedder",
+    "all_records",
     "available_indicators",
     "build_context",
     "build_default_assistant",
