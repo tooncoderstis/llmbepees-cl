@@ -16,6 +16,10 @@ Format tiap entri: **apa yang dicoba · hasil · apa yang dipelajari**.
 
 # GPU (Colab) — lihat COLAB.md:
 # !python finetune_openweight_colab.py && python eval_format_colab.py
+
+# Lokal (CPU) — adaptor dari Drive + base model di HF_HOME:
+.venv\Scripts\python -c "import os; os.environ['HF_HOME']='E:/hf'"
+.venv\Scripts\python 03-finetune-lora\03_ask_local.py "Apa definisi inflasi?"
 ```
 Kode reusable LoRA ada di `src/llmbepees_cl/lora/` (diuji di `tests/test_lora.py`).
 
@@ -59,6 +63,13 @@ Kode reusable LoRA ada di `src/llmbepees_cl/lora/` (diuji di `tests/test_lora.py
   Perbaikan **permanen** sudah masuk ke repo (`pick_dtype`, `max_length`, `processing_class`,
   AMP off di T4, + `!pip uninstall -y torchao` di docstring/`COLAB.md`), dan **terverifikasi
   di T4 tanpa patch in-memory**.
+
+- **Lokal CPU (2026-10-20)** — adaptor dari Drive ditaruh di `./lora-bps-format`, base model
+  diunduh ke `HF_HOME=E:\hf`, lalu `03_ask_local.py` memuat base + adaptor di CPU (fp32).
+  Bukti adaptor benar-benar terpasang: `adaptor aktif: True`, `lora_B absmean(max) ≈ 5.9e-4`
+  (cocok dengan Colab). Jawaban dasar vs LoRA **masih identik** — konsisten dengan adaptor yang
+  belum terlatih cukup. Pelajaran: pipeline "latih di GPU → jalan di CPU lokal" **berfungsi**;
+  jangan pakai `device_map="auto"` di CPU (membuat bobot adaptor nyangkut di `meta`).
 
 ## Latihan yang disarankan
 1. `01`: naikkan `r` ke 4 lalu turunkan ke 1 — di titik mana kapasitas adaptasi jadi penghambat?

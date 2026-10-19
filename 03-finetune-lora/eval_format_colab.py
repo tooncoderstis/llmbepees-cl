@@ -50,13 +50,15 @@ def skor(jawaban: str, tes: dict) -> bool:
 
 
 def main() -> None:
+    import torch
     from peft import PeftModel
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
     tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
-    base = AutoModelForCausalLM.from_pretrained(
-        MODEL_ID, torch_dtype=pick_dtype(), device_map="auto"
-    )
+    kwargs: dict = {"torch_dtype": pick_dtype()}
+    if torch.cuda.is_available():
+        kwargs["device_map"] = "auto"
+    base = AutoModelForCausalLM.from_pretrained(MODEL_ID, **kwargs)
     tuned = PeftModel.from_pretrained(base, ADAPTER_DIR)
 
     benar_base = benar_lora = 0

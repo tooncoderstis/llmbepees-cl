@@ -13,6 +13,10 @@ torch>=2.2
 # httpx>=0.27                # Fase 5: uji API (TestClient)
 # pypdf>=4                   # Fase 4: baca dokumen PDF publik
 # sentence-transformers>=3   # Fase 4: embedding multibahasa (unduh model ~0,5 GB)
+# transformers>=4.45         # Fase 3: muat model open-weight + adaptor LoRA (lokal CPU)
+# peft>=0.12                 # Fase 3: adaptor LoRA
+# datasets>=2.20             # Fase 3: dataset SFT/DPO
+# accelerate>=0.30           # Fase 3: pemuatan model
 # Catatan: BM25 di Fase 4 diimplementasikan sendiri (tanpa rank-bm25).
 
 # Dev (fastapi/httpx dipakai tes serving)

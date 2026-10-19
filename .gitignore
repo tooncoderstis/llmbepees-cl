@@ -34,6 +34,7 @@ cache/
 
 # Adaptor LoRA (jangan di repo)
 03-finetune-lora/lora-*/
+06-specialization/dpo-*/
 adapter_*
 
 # Dataset & dokumen (hanya dokumen publik; simpan besar di E:/F:)

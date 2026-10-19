@@ -8,12 +8,14 @@ Status terkini: [`STATUS.md`](STATUS.md).
 
 ## [Unreleased]
 ### Added
+- Inferensi lokal CPU: `03-finetune-lora/03_ask_local.py` (memuat base `Qwen2.5-0.5B-Instruct` + adaptor LoRA, membandingkan jawaban dasar vs LoRA) + extra `finetune` di `pyproject.toml` (`transformers`, `peft`, `datasets`, `accelerate`). Terverifikasi jalan di laptop (adaptor aktif, `lora_B absmean ≈ 5.9e-4`).
 - Fase 6 (Post-training & evaluasi): paket `src/llmbepees_cl/posttraining/` (DPO from-scratch: `sequence_logprobs`, `dpo_loss`, `train_dpo`, `evaluate_dpo` + dataset preferensi) dan `src/llmbepees_cl/evaluation/` (harness metrik + analisis kegagalan) + tes pytest.
 - Skrip `06-specialization/`: `01_dpo_from_scratch.py` (CPU), `02_dpo_openweight_colab.py` + `COLAB.md` (DPO/QLoRA Qwen2.5-0.5B-Instruct via TRL), `03_rl_concepts.md`; benchmark `eval/build_testset.py` (200 pertanyaan) + `eval/run_eval.py`; ringkasan paper `papers/README.md`; `PANDUAN.md` dan `notes.md`.
 - ADR-0004: evaluasi via harness bersama + test set dibangun dari korpus (draf).
 - Fase 5 (Mekanika training, scaling, serving): paket `src/llmbepees_cl/training/` (jadwal LR warmup+cosine, akumulasi gradien + clipping + autocast bf16, fit hukum pangkat) dan `src/llmbepees_cl/serving/` (API FastAPI: `/health`, `/ask`, `/indicators`; benchmark latensi p50/p95) + tes pytest.
 - Skrip belajar `05-serving/` (01 mekanika training, 02 scaling law sintetis, 03 serve, 04 benchmark) + `PANDUAN.md` dan `notes.md`; ekstra `serve` ditambah `httpx`.
 ### Changed
+- `eval_format_colab.py`: `device_map="auto"` hanya dipakai saat CUDA tersedia — di CPU ini membuat bobot adaptor nyangkut di `meta` (adaptor tak benar-benar terpasang).
 - Skrip Colab disamakan dengan API/lingkungan Colab terbaru sehingga **jalan tanpa patch**:
   `pick_dtype()` memilih dtype dari compute capability (≥8 Ampere+ → bf16, T4 → **fp16**, CPU → fp32),
   `SFTConfig(max_length=...)` (bukan `max_seq_length`), `DPOTrainer(processing_class=tokenizer)`,
