@@ -1,0 +1,52 @@
+{"id": "q001", "type": "concept", "question": "Apa itu inflasi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["naiknya harga"]}
+{"id": "q002", "type": "concept", "question": "Apa definisi inflasi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["naiknya harga"]}
+{"id": "q003", "type": "concept", "question": "Apa itu deflasi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["turunnya harga"]}
+{"id": "q004", "type": "concept", "question": "Apa itu indeks harga konsumen?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["perubahan harga sekelompok barang"]}
+{"id": "q005", "type": "concept", "question": "Apa itu nilai tukar?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["harga mata uang"]}
+{"id": "q006", "type": "concept", "question": "Apa itu populasi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["keseluruhan objek"]}
+{"id": "q007", "type": "concept", "question": "Jelaskan konsep populasi.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["keseluruhan objek"]}
+{"id": "q008", "type": "concept", "question": "Apa itu sampel?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["bagian dari populasi"]}
+{"id": "q009", "type": "concept", "question": "Apa yang dimaksud dengan sampel?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["bagian dari populasi"]}
+{"id": "q010", "type": "concept", "question": "Apa itu sensus?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["pencacahan lengkap"]}
+{"id": "q011", "type": "concept", "question": "Apa itu survei?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["sebagian populasi"]}
+{"id": "q012", "type": "concept", "question": "Apa itu pengangguran?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["keadaan seseorang"]}
+{"id": "q013", "type": "concept", "question": "Apa itu tingkat pengangguran terbuka?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["persentase jumlah pengangguran"]}
+{"id": "q014", "type": "concept", "question": "Apa itu produk domestik bruto?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["nilai seluruh barang dan jasa akhir"]}
+{"id": "q015", "type": "concept", "question": "Apa itu pertumbuhan ekonomi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["kenaikan produk domestik bruto"]}
+{"id": "q016", "type": "concept", "question": "Apa itu kemiskinan?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["tidak mampu memenuhi kebutuhan dasar"]}
+{"id": "q017", "type": "concept", "question": "Apa definisi garis kemiskinan?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["batas nilai pengeluaran minimum"]}
+{"id": "q018", "type": "concept", "question": "Apa itu data resmi?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["diterbitkan oleh lembaga statistik negara"]}
+{"id": "q019", "type": "concept", "question": "Jelaskan konsep data resmi.", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["diterbitkan oleh lembaga statistik negara"]}
+{"id": "q020", "type": "concept", "question": "Apa itu metadata?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["menjelaskan arti"]}
+{"id": "q021", "type": "concept", "question": "Apa definisi metadata?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["menjelaskan arti"]}
+{"id": "q022", "type": "concept", "question": "Apa itu definisi operasional?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["cara sebuah konsep diukur"]}
+{"id": "q023", "type": "concept", "question": "Apa itu satuan?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["ukuran yang dipakai pada setiap angka data"]}
+{"id": "q024", "type": "concept", "question": "Apa itu periode?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["rentang waktu pengamatan"]}
+{"id": "q025", "type": "concept", "question": "Apa itu wilayah?", "expect_citation": "Glosarium Statistik (2020)", "must_contain": ["cakupan tempat suatu data"]}
+{"id": "q026", "type": "concept", "question": "Apa itu penyajian data?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["cara menyampaikan data"]}
+{"id": "q027", "type": "concept", "question": "Apa itu tabel?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["baris dan kolom"]}
+{"id": "q028", "type": "concept", "question": "Apa itu grafik?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["secara visual"]}
+{"id": "q029", "type": "concept", "question": "Apa itu rasio?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["dua nilai yang berbeda satuan"]}
+{"id": "q030", "type": "concept", "question": "Apa itu proporsi?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["bagian dari keseluruhan"]}
+{"id": "q031", "type": "concept", "question": "Apa definisi proporsi?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["bagian dari keseluruhan"]}
+{"id": "q032", "type": "concept", "question": "Apa itu sumber data?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["dapat diverifikasi"]}
+{"id": "q033", "type": "concept", "question": "Apa itu sitasi?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["pencantuman rujukan sumber"]}
+{"id": "q034", "type": "concept", "question": "Apa itu dokumen publik?", "expect_citation": "Panduan Penyajian Data Statistik (2021)", "must_contain": ["boleh diakses dan dikutip"]}
+{"id": "q035", "type": "number", "question": "Berapa inflasi Indonesia 2023?", "expect_tool": "inflasi", "must_contain": ["3.67", "persen"]}
+{"id": "q036", "type": "number", "question": "Berapa inflasi Indonesia 2022?", "expect_tool": "inflasi", "must_contain": ["5.51", "persen"]}
+{"id": "q037", "type": "number", "question": "Berapa inflasi Indonesia 2024?", "expect_tool": "inflasi", "must_contain": ["2.57", "persen"]}
+{"id": "q038", "type": "number", "question": "Berapa tingkat pengangguran terbuka Indonesia 2023?", "expect_tool": "tingkat pengangguran terbuka", "must_contain": ["5.32", "persen"]}
+{"id": "q039", "type": "number", "question": "Berapa tingkat pengangguran terbuka Indonesia 2024?", "expect_tool": "tingkat pengangguran terbuka", "must_contain": ["4.91", "persen"]}
+{"id": "q040", "type": "number", "question": "Berapa pertumbuhan ekonomi Indonesia 2023?", "expect_tool": "pertumbuhan ekonomi", "must_contain": ["5.05", "persen"]}
+{"id": "q041", "type": "number", "question": "Berapa pertumbuhan ekonomi Indonesia 2024?", "expect_tool": "pertumbuhan ekonomi", "must_contain": ["5.03", "persen"]}
+{"id": "q042", "type": "number", "question": "Berapa jumlah penduduk Indonesia 2023?", "expect_tool": "jumlah penduduk", "must_contain": ["278.7", "juta jiwa"]}
+{"id": "q043", "type": "number", "question": "Berapa jumlah penduduk Indonesia 2024?", "expect_tool": "jumlah penduduk", "must_contain": ["281.6", "juta jiwa"]}
+{"id": "q044", "type": "number", "question": "Berapa garis kemiskinan Indonesia 2023?", "expect_tool": "garis kemiskinan", "must_contain": ["515530", "rupiah"]}
+{"id": "q045", "type": "abstain", "question": "Apa warna bendera BPS?", "should_abstain": true}
+{"id": "q046", "type": "abstain", "question": "Siapa presiden pertama Indonesia?", "should_abstain": true}
+{"id": "q047", "type": "abstain", "question": "Apa itu kucing persia?", "should_abstain": true}
+{"id": "q048", "type": "abstain", "question": "Bagaimana cara memasak rendang?", "should_abstain": true}
+{"id": "q049", "type": "abstain", "question": "Apa ibu kota Jepang?", "should_abstain": true}
+{"id": "q050", "type": "abstain", "question": "Berapa inflasi Indonesia?", "should_abstain": true}
+{"id": "q051", "type": "abstain", "question": "Berapa curah hujan Indonesia 2023?", "should_abstain": true}
+{"id": "q052", "type": "abstain", "question": "Apa itu teori relativitas?", "should_abstain": true}
