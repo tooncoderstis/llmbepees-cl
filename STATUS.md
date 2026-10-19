@@ -38,14 +38,14 @@
 - Fase 3 (berjalan): paket `src/llmbepees_cl/lora/` + skrip `03-finetune-lora/` (01 LoRA from-scratch, 02 LoRA pada MiniGPT, + skrip Colab). CPU: LoRA ~3.6% parameter dilatih, loss contoh tahanan turun (2.26 → 1.98). Skrip Colab/GPU siap namun belum dijalankan.
 - Fase 4 selesai: paket `src/llmbepees_cl/rag/` + skrip `04-rag-bps/` (01 indeks → 04 tanya) & evaluasi `04-rag-bps/eval/` (52 pertanyaan). Baseline: akurasi 100% (44/44), sitasi 100% (34/34), abstain 100% (8/8), angka-via-tool 100% (10/10) — in-domain, jadi optimistis. Angka hanya dari tool `get_indicator` (data dummy); konsep ber-sitasi dari korpus contoh.
 - Fase 5 selesai: paket `src/llmbepees_cl/training/` + `src/llmbepees_cl/serving/` + skrip `05-serving/` (01 mekanika → 04 benchmark). Baseline latensi asisten (ekstraktif, in-process): p50 ~0,13 ms / p95 ~0,5 ms. Scaling law sintetis: loss vs parameter `~N^-0.19`. FastAPI diuji via `TestClient`. Mixed precision & distributed hanya konsep (CPU/1 GPU).
-- Git lokal diinisialisasi; belum di-push ke GitHub.
+- Git lokal diinisialisasi; repo ter-push ke GitHub (`tooncoderstis/llmbepees-cl`, publik) — CI Actions hijau (ruff + 74 tes + gitleaks).
 
 ## Yang belum selesai / menunggu
 | Item | Catatan |
 |---|---|
-| Repo GitHub | ⬜ `tooncoderstis/llmbepees-cl` (publik) — push saat siap |
-| Secret hub | ⬜ isi `HUB_INGEST_SECRET` di `.env` (dari repo portofolio); tidak di-commit |
-| CI | ⬜ verifikasi hijau di GitHub Actions setelah push |
+| Repo GitHub | ✅ `tooncoderstis/llmbepees-cl` (publik) — 7 commit ter-push |
+| Secret hub | ✅ `HUB_INGEST_SECRET` terkonfigurasi di `.env` (tidak di-commit); `hub:report` berjalan |
+| CI | ✅ GitHub Actions hijau (ruff + 74 tes + gitleaks) |
 | Deploy EasyPanel | ⬜ provision saat Fase 5 (asisten FastAPI belum ada) |
 | Data dokumen BPS | ⬜ dokumen publik nyata belum diletakkan di `04-rag-bps/data/` (tes pakai korpus contoh `SAMPLE_DOCS`) |
 | Test set evaluasi nyata | ⬜ test set 200–500 pertanyaan + jawaban acuan ahli substansi (Fase 6); baseline 52 pertanyaan sudah ada |
