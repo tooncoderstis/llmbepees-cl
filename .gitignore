@@ -1,0 +1,55 @@
+# Dependensi / build artifacts
+node_modules/
+dist/
+build/
+*.egg-info/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Environment & secrets (JANGAN commit)
+.env
+.env.*
+!.env.example
+!.env.production.example
+
+# Model, checkpoint, cache (jangan di repo; simpan di E:/F:)
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.gguf
+*.bin
+models/
+checkpoints/
+cache/
+.hf/
+
+# Adaptor LoRA (jangan di repo)
+03-finetune-lora/lora-*/
+adapter_*
+
+# Dataset & dokumen (hanya dokumen publik; simpan besar di E:/F:)
+04-rag-bps/data/*
+!04-rag-bps/data/.gitkeep
+!04-rag-bps/data/README.md
+01-pytorch-basics/data/
+*.pdf
+
+# Logs & runtime
+*.log
+tmp/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
