@@ -102,12 +102,34 @@ jauh lebih lambat, sehingga caching/kv-cache & kuantisasi jadi penting.
 
 ---
 
+## Skrip 05 — `05_chat_llm.py` (chat lokal dengan LLM)
+
+**Apa yang dilakukan.** Menjalankan chat web lokal: `GET /` (halaman HTML) + `POST /chat`,
+membungkus `Qwen2.5-0.5B-Instruct` + adaptor LoRA (`src/llmbepees_cl/serving/chat.py`).
+
+**Kenapa begitu.** Ini langkah "serve LLM lokal" yang sesungguhnya: model dimuat **sekali**
+saat balasan pertama (lazy), riwayat percakapan dijaga di browser → server **stateless**.
+`transformers`/`peft` diimpor di dalam engine, jadi CI tetap bisa menguji endpoint dengan
+**engine palsu** (tanpa mengunduh model).
+
+**Jalankan sendiri.**
+```sh
+$env:HF_HOME='E:\hf'
+.venv\Scripts\python 05-serving\05_chat_llm.py
+# buka http://127.0.0.1:8000
+```
+Atur lewat env: `CHAT_ADAPTER_DIR=none` (base saja), `CHAT_MAX_NEW_TOKENS`, `CHAT_MODEL_ID`.
+
+**Latihan.** 1) Ganti adaptor ke hasil DPO; bandingkan. 2) Tambah **streaming** (token demi token) dengan `TextIteratorStreamer`. 3) Ukur latensi `/chat` (p50/p95) seperti Skrip 04.
+
+---
+
 ## Konsep serving (praktik di GPU/Colab)
 
 - **llama.cpp / Ollama**: menjalankan model kecil lokal (CPU pun bisa), dengan **kuantisasi** (Q4/Q8) yang mengecilkan memori dengan sedikit penurunan mutu.
 - **KV cache**: menyimpan key/value attention yang sudah dihitung agar token berikutnya tidak dihitung ulang — kunci kecepatan inferensi generasi.
 - **vLLM**: server inferensi ber-throughput tinggi (paged attention) — coba di GPU sewaan.
-- Di sini kita belum menjalankan LLM (belum ada model); **kontrak `Answer` siap** untuk diisi `LLMAnswerer` nanti.
+- Di sini kita **sudah** menyerve LLM lokal (Skrip 05, Hugging Face + LoRA di CPU); llama.cpp/Ollama + kuantisasi menjadi langkah lanjut untuk kecepatan. Kontrak `Answer` tetap siap untuk dijahit ke jalur LLM.
 
 ---
 

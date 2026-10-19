@@ -8,6 +8,7 @@ Status terkini: [`STATUS.md`](STATUS.md).
 
 ## [Unreleased]
 ### Added
+- Chat web lokal dengan LLM: `src/llmbepees_cl/serving/chat.py` (FastAPI; `GET /` halaman HTML + `POST /chat`; `LocalLLMEngine` memuat model + adaptor LoRA sekali, `transformers`/`peft` diimpor lazily) + skrip `05-serving/05_chat_llm.py` + tes `tests/test_chat_serving.py` (engine palsu, tanpa unduh model). Terverifikasi lokal di CPU.
 - Inferensi lokal CPU: `03-finetune-lora/03_ask_local.py` (memuat base `Qwen2.5-0.5B-Instruct` + adaptor LoRA, membandingkan jawaban dasar vs LoRA) + extra `finetune` di `pyproject.toml` (`transformers`, `peft`, `datasets`, `accelerate`). Terverifikasi jalan di laptop (adaptor aktif, `lora_B absmean ≈ 5.9e-4`).
 - Fase 6 (Post-training & evaluasi): paket `src/llmbepees_cl/posttraining/` (DPO from-scratch: `sequence_logprobs`, `dpo_loss`, `train_dpo`, `evaluate_dpo` + dataset preferensi) dan `src/llmbepees_cl/evaluation/` (harness metrik + analisis kegagalan) + tes pytest.
 - Skrip `06-specialization/`: `01_dpo_from_scratch.py` (CPU), `02_dpo_openweight_colab.py` + `COLAB.md` (DPO/QLoRA Qwen2.5-0.5B-Instruct via TRL), `03_rl_concepts.md`; benchmark `eval/build_testset.py` (200 pertanyaan) + `eval/run_eval.py`; ringkasan paper `papers/README.md`; `PANDUAN.md` dan `notes.md`.
